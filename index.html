@@ -73,6 +73,8 @@
   .steps li::before { content: counter(step); display: block; font: italic 300 46px/1 var(--display); color: var(--red); margin-bottom: 14px; }
   .steps p, .layer p { margin: 0; color: var(--ink-soft); }
 
+  .clip { margin: 0; background: var(--paper-raised); border: 1px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); }
+  .clip video { display: block; width: 100%; height: auto; }
   .layers { display: grid; grid-template-columns: 1fr 1fr; margin-top: 48px; border: 1px solid var(--ink); background: var(--paper-raised); }
   .layer { padding: clamp(24px, 3.5vw, 40px); }
   .layer + .layer { border-left: 1px solid var(--ink); }
@@ -100,7 +102,7 @@
   @media (max-width: 860px) {
     .hero, .closing-grid, .steps, .layers { grid-template-columns: 1fr; }
     .layer + .layer { border-left: 0; border-top: 1px solid var(--ink); }
-    .proof { box-shadow: 4px 4px 0 var(--ink); }
+    .proof, .clip { box-shadow: 4px 4px 0 var(--ink); }
     .nav nav a:not(.btn) { display: none; }
   }
   @media (max-width: 460px) {
@@ -156,6 +158,16 @@
         <li><h3>Paste in your copy</h3><p>Drop in a story. Copy Chief checks it against AP style and your house rules together.</p></li>
         <li><h3>Review every edit</h3><p>See each change marked up with the rule behind it. Accept it, reject it, and move on.</p></li>
       </ol>
+    </div>
+  </section>
+
+  <section id="demo">
+    <div class="wrap">
+      <figure class="clip">
+        <video src="editorclip.mp4" controls playsinline preload="metadata" aria-label="Copy Chief editing a story">
+          Your browser can’t play this video. <a href="editorclip.mp4">Download it instead.</a>
+        </video>
+      </figure>
     </div>
   </section>
 
