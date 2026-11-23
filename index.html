@@ -78,6 +78,9 @@
 
   .clip { margin: 0; background: var(--paper-raised); border: 1px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); }
   .clip video { display: block; width: 100%; height: auto; }
+  .cartoon { margin: 0 auto; max-width: 960px; background: var(--paper-raised); border: 1px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); }
+  .cartoon img { display: block; width: 100%; height: auto; }
+  .cartoon-note { max-width: 960px; margin: 18px auto 0; font-size: 15px; color: var(--ink-soft); }
   .layers { display: grid; grid-template-columns: 1fr 1fr; margin-top: 48px; border: 1px solid var(--ink); background: var(--paper-raised); }
   .layer { padding: clamp(24px, 3.5vw, 40px); }
   .layer + .layer { border-left: 1px solid var(--ink); }
@@ -106,7 +109,7 @@
   @media (max-width: 860px) {
     .hero, .closing-grid, .steps, .layers { grid-template-columns: 1fr; }
     .layer + .layer { border-left: 0; border-top: 1px solid var(--ink); }
-    .proof, .clip { box-shadow: 4px 4px 0 var(--ink); }
+    .proof, .clip, .cartoon { box-shadow: 4px 4px 0 var(--ink); }
     .nav nav a:not(.btn) { display: none; }
   }
   @media (max-width: 400px) { .nav nav { gap: 8px; } .logo { font-size: 24px; } .nav .btn { padding: 8px 10px; font-size: 15px; } }
@@ -201,6 +204,15 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="cartoon">
+    <div class="wrap">
+      <figure class="cartoon">
+        <img src="cartoon.jpg" width="1376" height="768" loading="lazy" alt="Cartoon of a wild-haired editor at a cluttered newsroom desk, pulling a screaming red tentacled creature out of an article while shouting “It’s not a typo! It’s an idea! GAHHH!” A frightened reporter points at him, a sign reads “Deadlines are mere suggestions from the void,” and a box is labeled “Unedited tragedy.” Caption: Despite the latest technological advances, the process of editing at the Chronicle remained a terrifying biological extraction.">
+      </figure>
+      <p class="cartoon-note">This cartoon was generated with AI.</p>
     </div>
   </section>
 
