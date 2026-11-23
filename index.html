@@ -80,7 +80,8 @@
   .clip video { display: block; width: 100%; height: auto; }
   .cartoon { margin: 0 auto; max-width: 960px; background: var(--paper-raised); border: 1px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); }
   .cartoon img { display: block; width: 100%; height: auto; }
-  .cartoon-note { max-width: 960px; margin: 18px auto 0; font-size: 15px; color: var(--ink-soft); }
+  .clip-note, .cartoon-note { margin: 18px 0 0; font-size: 15px; color: var(--ink-soft); }
+  .cartoon-note { max-width: 960px; margin-inline: auto; }
   .layers { display: grid; grid-template-columns: 1fr 1fr; margin-top: 48px; border: 1px solid var(--ink); background: var(--paper-raised); }
   .layer { padding: clamp(24px, 3.5vw, 40px); }
   .layer + .layer { border-left: 1px solid var(--ink); }
@@ -177,6 +178,7 @@
           Your browser can’t play this video. <a href="videoclip.mp4">Download it instead.</a>
         </video>
       </figure>
+      <p class="clip-note">This video was generated with AI.</p>
     </div>
   </section>
 
