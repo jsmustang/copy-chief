@@ -40,7 +40,10 @@
 
   .btn { display: inline-block; background: var(--ink); color: var(--paper); border: 0; border-radius: 3px; padding: 12px 20px; font: 600 16px/1.2 var(--body); text-decoration: none; cursor: pointer; transition: background .15s; }
   .btn:hover { background: var(--red); }
-  .nav .btn { padding: 9px 16px; }
+  .nav .btn { padding: 9px 16px; white-space: nowrap; }
+  .logo { white-space: nowrap; }
+  .btn-outline { background: none; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+  .btn-outline:hover { background: var(--ink); color: var(--paper); }
 
   .hero { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(36px, 6vw, 80px); align-items: center; padding-block: clamp(48px, 8vw, 96px); }
   .hero h1 { font-size: clamp(42px, 5.2vw, 68px); line-height: 1.06; }
@@ -106,6 +109,7 @@
     .proof, .clip { box-shadow: 4px 4px 0 var(--ink); }
     .nav nav a:not(.btn) { display: none; }
   }
+  @media (max-width: 400px) { .nav nav { gap: 8px; } .logo { font-size: 24px; } .nav .btn { padding: 8px 10px; font-size: 15px; } }
   @media (max-width: 460px) {
     .signup-row { flex-direction: column; }
     .copy { padding: 18px 16px; }
@@ -122,6 +126,7 @@
     <nav aria-label="Main">
       <a href="#how">How it works</a>
       <a href="#styles">Style guides</a>
+      <a class="btn btn-outline" href="faq.html">FAQ</a>
       <a class="btn" href="#access">Get early access</a>
     </nav>
   </div>
