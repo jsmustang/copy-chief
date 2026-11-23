@@ -40,7 +40,10 @@
 
   .btn { display: inline-block; background: var(--ink); color: var(--paper); border: 0; border-radius: 3px; padding: 12px 20px; font: 600 16px/1.2 var(--body); text-decoration: none; cursor: pointer; transition: background .15s; }
   .btn:hover { background: var(--red); }
-  .nav .btn { padding: 9px 16px; }
+  .nav .btn { padding: 9px 16px; white-space: nowrap; }
+  .logo { white-space: nowrap; }
+  .btn-outline { background: none; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+  .btn-outline:hover { background: var(--ink); color: var(--paper); }
 
   .hero { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(36px, 6vw, 80px); align-items: center; padding-block: clamp(48px, 8vw, 96px); }
   .hero h1 { font-size: clamp(42px, 5.2vw, 68px); line-height: 1.06; }
@@ -73,6 +76,13 @@
   .steps li::before { content: counter(step); display: block; font: italic 300 46px/1 var(--display); color: var(--red); margin-bottom: 14px; }
   .steps p, .layer p { margin: 0; color: var(--ink-soft); }
 
+  .clip { margin: 0; background: var(--paper-raised); border: 1px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); }
+  .clip video { display: block; width: 100%; height: auto; }
+  .cartoon { margin: 0 auto; max-width: 960px; background: var(--paper-raised); border: 1px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); }
+  .cartoon img { display: block; width: 100%; height: auto; }
+  .clip-note, .cartoon-note { margin: 18px 0 0; font-size: 15px; color: var(--ink-soft); }
+  .cartoon-note { max-width: 960px; margin-inline: auto; }
+  .cartoon-title { max-width: 960px; margin: 0 auto 40px; }
   .layers { display: grid; grid-template-columns: 1fr 1fr; margin-top: 48px; border: 1px solid var(--ink); background: var(--paper-raised); }
   .layer { padding: clamp(24px, 3.5vw, 40px); }
   .layer + .layer { border-left: 1px solid var(--ink); }
@@ -94,15 +104,21 @@
   .signup .btn:hover { background: #8f1d17; }
   .signup-note { min-height: 1.5em; margin: 10px 0 0; font-size: 15px; color: #cfc7b8; }
 
+  .class-note { border-bottom: 1px solid var(--rule); padding-block: 28px; }
+  .class-note p { margin: 0; max-width: 46em; font-size: 17px; color: var(--ink-soft); }
+  .class-note strong { color: var(--ink); font-weight: 600; }
+
   footer { padding-block: 26px; font-size: 15px; color: var(--ink-soft); }
+  footer .disclaimer { margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--rule); }
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 28px; }
 
   @media (max-width: 860px) {
     .hero, .closing-grid, .steps, .layers { grid-template-columns: 1fr; }
     .layer + .layer { border-left: 0; border-top: 1px solid var(--ink); }
-    .proof { box-shadow: 4px 4px 0 var(--ink); }
+    .proof, .clip, .cartoon { box-shadow: 4px 4px 0 var(--ink); }
     .nav nav a:not(.btn) { display: none; }
   }
+  @media (max-width: 400px) { .nav nav { gap: 8px; } .logo { font-size: 24px; } .nav .btn { padding: 8px 10px; font-size: 15px; } }
   @media (max-width: 460px) {
     .signup-row { flex-direction: column; }
     .copy { padding: 18px 16px; }
@@ -119,6 +135,7 @@
     <nav aria-label="Main">
       <a href="#how">How it works</a>
       <a href="#styles">Style guides</a>
+      <a class="btn btn-outline" href="faq.html">FAQ</a>
       <a class="btn" href="#access">Get early access</a>
     </nav>
   </div>
@@ -154,8 +171,19 @@
       <ol class="steps">
         <li><h3>Add your style guide</h3><p>Bring in your newsroom’s rules: local place names, titles, preferred terms and all the exceptions your desk knows by heart.</p></li>
         <li><h3>Paste in your copy</h3><p>Drop in a story. Copy Chief checks it against AP style and your house rules together.</p></li>
-        <li><h3>Review every edit</h3><p>See each change marked up with the rule behind it. Accept it, reject it, and move on.</p></li>
+        <li><h3>Review every edit</h3><p>See each change marked up with the rule behind it. Accept it, reject it and move on.</p></li>
       </ol>
+    </div>
+  </section>
+
+  <section id="demo">
+    <div class="wrap">
+      <figure class="clip">
+        <video src="videoclip.mp4" controls autoplay muted loop playsinline aria-label="Copy Chief editing a story">
+          Your browser can’t play this video. <a href="videoclip.mp4">Download it instead.</a>
+        </video>
+      </figure>
+      <p class="clip-note">This video was generated with AI.</p>
     </div>
   </section>
 
@@ -186,6 +214,16 @@
     </div>
   </section>
 
+  <section id="cartoon">
+    <div class="wrap">
+      <h2 class="cartoon-title">More time on the journalism</h2>
+      <figure class="cartoon">
+        <img src="cartoon.jpg" width="1376" height="768" loading="lazy" alt="Cartoon of a wild-haired editor at a cluttered newsroom desk, pulling a screaming red tentacled creature out of an article while shouting “It’s not a typo! It’s an idea! GAHHH!” A frightened reporter points at him, a sign reads “Deadlines are mere suggestions from the void,” and a box is labeled “Unedited tragedy.” Caption: Despite the latest technological advances, the process of editing at the Chronicle remained a terrifying biological extraction.">
+      </figure>
+      <p class="cartoon-note">This cartoon was generated with AI.</p>
+    </div>
+  </section>
+
   <section class="closing" id="access">
     <div class="wrap closing-grid">
       <div>
@@ -202,12 +240,21 @@
       </form>
     </div>
   </section>
+
+  <aside class="class-note" aria-label="Note for the assignment">
+    <div class="wrap">
+      <p><strong>Feature explanation:</strong> An AI-generated, newspaper-style comic strip humorously makes the point that users of this service can outsource grammar and style fixes to the app so they can focus on editing news and opinion pieces for accuracy, substance and fairness.</p>
+    </div>
+  </aside>
 </main>
 
 <footer>
   <div class="wrap">
     <span>© 2026 Copy Chief</span>
     <span>Not affiliated with or endorsed by The Associated Press.</span>
+  </div>
+  <div class="wrap">
+    <p class="disclaimer">Disclaimer: This page and product are part of a class project. The service doesn't exist.</p>
   </div>
 </footer>
 
@@ -225,5 +272,7 @@
     document.getElementById('signup-note').textContent = 'Preview only: this form isn’t connected yet, so your email was not saved.';
   });
 </script>
+<script> window.chtlConfig = { chatbotId: "8993852753" } </script>
+<script async data-id="8993852753" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
 </body>
 </html>
